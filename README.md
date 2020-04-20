@@ -667,24 +667,6 @@ Class | Method | HTTP request | Description
  - **esi-wallet.read_character_wallet.v1**: EVE SSO scope esi-wallet.read_character_wallet.v1
  - **esi-wallet.read_corporation_wallets.v1**: EVE SSO scope esi-wallet.read_corporation_wallets.v1
 
-Example
-```
-	auth := context.WithValue(context.TODO(), sw.ContextAccessToken, "ACCESSTOKENSTRING")
-    r, err := client.Service.Operation(auth, args)
-```
-
-Or via OAuth2 module to automatically refresh tokens and perform user authentication.
-```
-	import 	"golang.org/x/oauth2"
-
-    / .. Perform OAuth2 round trip request and obtain a token .. //
-
-    tokenSource := oauth2cfg.TokenSource(createContext(httpClient), &token)
-	auth := context.WithValue(oauth2.NoContext, sw.ContextOAuth2, tokenSource)
-    r, err := client.Service.Operation(auth, args)
-```
-
-## Author
 
 
 
